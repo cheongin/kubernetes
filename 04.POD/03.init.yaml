@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: resources-pod
-    image: nginx:latest
+    image: registry.k8s.io/pause:2.0
     resources:
       requests:
         cpu: 0.1
