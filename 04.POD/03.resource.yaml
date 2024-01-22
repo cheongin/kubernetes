@@ -10,8 +10,8 @@ spec:
     image: registry.k8s.io/pause:2.0
     resources:
       requests:
-        cpu: 700m
+        cpu: 100m
+        mem: 100m
       limits:
-        cpu: 700m
-    ports:
-    - containerPort: 8080
+        cpu: 200m
+        mem: 100m
