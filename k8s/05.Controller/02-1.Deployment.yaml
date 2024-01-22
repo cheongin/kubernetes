@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx-deployment
 spec:
-  replicas: 5
+  replicas: 5 # 동시에 실행할 POD 수량
   selector:
     matchLabels:
       app: nginx-deployment
@@ -18,4 +18,4 @@ spec:
       - name: nginx-deployment
         image: nginx
         ports:
-        - containerPort: 80
+        - containerPort: 80 # POD가 실행할 서비스 포트 번호

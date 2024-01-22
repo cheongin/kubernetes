@@ -8,6 +8,6 @@ spec:
     image: vish/stress
     resources:
       limits:
-        cpu: "100"
+        cpu: "100"  # 최대 CPU 사용률(100%)
       requests:
-        cpu: "100"
+        cpu: "100"  # 기본 CPU 사용률(100%)

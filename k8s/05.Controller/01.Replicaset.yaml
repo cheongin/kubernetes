@@ -13,8 +13,8 @@ spec:
       - name: nginx-replicaset
         image: nginx
         ports:
-        - containerPort: 80
-  replicas: 3
+        - containerPort: 80 # POD가 실행할 서비스 포트 번호
+  replicas: 3 # 동시에 실행할 POD 수량
   selector:
     matchLabels:
       app: nginx-replicaset
