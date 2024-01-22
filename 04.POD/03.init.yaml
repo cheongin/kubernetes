@@ -7,7 +7,7 @@ metadata:
 spec:
   initContainers:
   - name: init-container
-    image: busybox:latest
+    image: hello-world
     command: ['sh', '-c', 'sleep 2; echo hello-world!']
   containers:
   - name: service-container
