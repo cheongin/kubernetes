@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: cpu-demo
+  name: limit-cpu
 spec:
   containers:
-  - name: cpu-demo-ctr
+  - name: limit-cpu
     image: vish/stress
     resources:
       limits:
