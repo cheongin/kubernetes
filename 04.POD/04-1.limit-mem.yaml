@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: limit-mem-1
-    image: vish/stress
+    image: polinux/stress
     resources:
       requests:
         memory: "100Mi"
