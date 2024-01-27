@@ -1,9 +1,9 @@
-apiVersion: batch/v1
+apiVersion: batch/v1                                        # API Version(batch/v1beta 아님)
 kind: CronJob
 metadata:
   name: hello
 spec:
-  schedule: "*/1 * * * *"                           # Cron Schedule 지정
+  schedule: "*/1 * * * *"                                   # Cron Schedule 지정
   jobTemplate:
     spec:
       template:
