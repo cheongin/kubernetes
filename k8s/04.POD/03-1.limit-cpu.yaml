@@ -7,7 +7,7 @@ spec:
   - name: limit-cpu-1
     image: vish/stress
     resources:
-      limits:
-        cpu: "1"  # 최대 CPU 수량(1 Core)
-      requests:
-        cpu: "0.5"  # 최대 CPU 수량(0.5 Core)
+      limits:       # 최대 CPU 수량(1 Core)
+        cpu: "1"
+      requests:     # 기본 CPU 수량(0.5 Core)
+        cpu: "0.5"
