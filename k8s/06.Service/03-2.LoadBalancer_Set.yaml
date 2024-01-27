@@ -1,0 +1,35 @@
+##### Deployment와 LoadBalancer 동시 배포용 #####
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-Deployment
+  labels:
+    app: nginx-Deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-Deployment
+  template:
+    metadata:
+      labels:
+        app: nginx-Deployment
+    spec:
+      containers:
+      - name: nginx-Deployment
+        image: nginx
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-loadbalancer
+spec:
+  type: LoadBalancer                # IP 부여 방식을 LoadBalancer로 지정
+  selector:
+    app: nginx                      # Deployment 이름인 nginx와 연동
+  ports:
+  - protocol: TCP                   # 포트가 사용하는 프로토콜
+    port: 80                        # 내부 포트(기본 서비스 포트)
+    targetPort: 80                  # 내부 포트(서비스 포트 번호가 여러개일 때)
