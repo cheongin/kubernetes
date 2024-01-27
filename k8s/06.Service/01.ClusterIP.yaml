@@ -3,14 +3,9 @@ kind: Service
 metadata:
   name: nginx-clusterip
 spec:
-  replicas: 1
   type: ClusterIP
   selector:
-    matchLabels:
-      app: nginx-svc
-  containers:
-  - name: nginx
-    image: nginxdemos/hello
+    app: nginx-svc
   ports:
   - protocol: tcp
     port: 80
