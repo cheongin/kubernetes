@@ -10,4 +10,4 @@ spec:
   - protocol: TCP                         # 포트가 사용하는 프로토콜
     port: 80                              # 내부 포트(기본 서비스 포트)
     targetPort: 80                        # 내부 포트(서비스 포트 번호가 여러개일 때)
-    NodePort: 30080                       # 외부 포트
+    nodePort: 30080                       # 외부 포트
