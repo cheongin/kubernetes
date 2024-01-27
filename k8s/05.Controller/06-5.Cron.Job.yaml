@@ -9,8 +9,9 @@ spec:
                                                                       # Allow : 여러 개의 잡을 동시 실행
                                                                       # Forbid : 이전 Job이 정상 실행 중이지 않은 상태에서 schedule에 따른 다음 시간이 도래 했을 때 새로운 Jub은 다음 schedule Time으로 연기하고 이전 Job이 실행 됐다면 schedule에 따라 정상 실행
                                                                       # Replace : 이전 실행 Job이 실행 중인 상태에서 schedule에 따른 다음 시간이 도래 했을 때 이전 실행 Job을 종료하고 새로운 Job으로 실행
-  succesfulJobsHistoryLimit: 3                                        # 잡이 정상적으로 실행 됐을 때 내역 저장(Default : 3)
+  successfulJobsHistoryLimit: 3                                       # 잡이 정상적으로 실행 됐을 때 내역 저장(Default : 3)
   failedJobsHistoryLimit: 1                                           # 잡이 정상적으로 실행 됐을 때 내역 저장(Default : 1)
+  suspend: false                                                      # 잡의 후속 실행 일시정지(Default : false)
   jobTemplate:
     spec:
       template:
