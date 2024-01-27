@@ -25,9 +25,9 @@ kind: Service
 metadata:
   name: nginx-clusterip
 spec:
-  type: ClusterIP
+  type: ClusterIP               # IP 부여 방식을 ClusterIP로 지정
   selector:
-    app: nginx-clusterip
+    app: nginx-svc              # Deployment의 서비스 이름인 nginx-svc와 연동
   ports:
   - protocol: TCP
     port: 80
