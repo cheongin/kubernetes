@@ -27,7 +27,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: nginx-svc
+    app: nginx-clusterip
   ports:
   - protocol: TCP
     port: 80
