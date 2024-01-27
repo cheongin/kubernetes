@@ -1,4 +1,4 @@
-##### Deployment와 ClusterIP 동시 배포용 #####
+##### Deployment와 ClusterIP 동시 배포 시 #####
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -31,5 +31,5 @@ spec:
     app: nginx-svc              # Deployment의 서비스 이름인 nginx-svc와 연동
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80
+    port: 80          # 내부 포트(기본 서비스 포트)
+    targetPort: 80    # 내부 포트(서비스 포트 번호가 여러개일 때)
