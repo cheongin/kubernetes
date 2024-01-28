@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 1                         # Replicas 수량 지정
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      hostname: app                   # Main Domain Address 지정
+      subdomain: nginx-app            # Sub Domain Address 지정
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
