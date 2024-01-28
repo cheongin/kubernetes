@@ -1,23 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: busybox-domain
   labels:
-    app: nginx
+    app: busybox-domain
 spec:
-  replicas: 1                         # Replicas 수량 지정
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: busybox-domain
   template:
     metadata:
       labels:
-        app: nginx
+        app: busybox-domain
     spec:
       hostname: app                   # Main Domain Address 지정
       subdomain: nginx-app            # Sub Domain Address 지정
       containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+      - name: busybox-domain-container
+        image: busybox:latest
+        # Keep the container running
+        command: [ "/bin/sh", "-c", "--" ]
+        args: [ "while true; do sleep 30; done;" ]
+        resources:
+          requests:
+            cpu: 30m
+            memory: 64Mi
+          limits:
+            cpu: 100m
+            memory: 128Mi
