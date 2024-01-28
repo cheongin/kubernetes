@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-domain
+  name: nginx-domain-app
   labels:
-    app: nginx
+    app: nginx-domain-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: nginx-domain-app
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx-domain-app
     spec:
       hostname: nginx-app                 # 기본 도메인 주소 지정
       subdomain: sub-nginx                # 추가 도메인 주소 지정
       dnsPolicy: ClusterFirst
       containers:
-      - name: nginx
+      - name: nginx-domain-app
         image: nginxdemos/hello
         ports: 
         - containerPort: 80
@@ -26,10 +26,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-domain
+  name: nginx-domain-svc
+    labels:
+      app: nginx-domain-app
 spec:
   selector:
-    app: nginx                            # Deployment 이름인 nginx와 연동
+    app: nginx-domain-app                 # Deployment 이름인 nginx와 연동
   type: NodePort                          # IP 부여 방식을 NodePort로 지정
   ports:
   - name: http                            # 포트가 사용하는 프로토콜(L7)
