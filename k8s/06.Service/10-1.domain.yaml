@@ -27,8 +27,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-domain-svc
-    labels:
-      app: nginx-domain-app
+  labels:
+    app: nginx-domain-app
 spec:
   selector:
     app: nginx-domain-app                 # Deployment 이름인 nginx와 연동
