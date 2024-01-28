@@ -26,4 +26,4 @@ metadata:
   name: nginx-ExternalName
 spec:
   type: ExternalName                # IP 부여 방식을 ExternalName로 지정
-  externalName: google.vm           # DNS(CNAME Record) 지정
+  externalName: google.com          # DNS(CNAME Record) 지정
