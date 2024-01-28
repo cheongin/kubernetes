@@ -15,7 +15,7 @@ spec:
         app: busybox-domain
     spec:
       hostname: app                   # Main Domain Address 지정
-      subdomain: nginx-app            # Sub Domain Address 지정
+      subdomain: busybox-app            # Sub Domain Address 지정
       containers:
       - name: busybox-domain-container
         image: busybox:latest
