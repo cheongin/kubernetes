@@ -14,8 +14,8 @@ spec:
       labels:
         app: nginx
     spec:
-      hostname: nginx-app               # 기본 도메인 주소 지정
-      subdomain: sub-nginx              # 추가 도메인 주소 지정
+      hostname: nginx-app                 # 기본 도메인 주소 지정
+      subdomain: sub-nginx                # 추가 도메인 주소 지정
       dnsPolicy: ClusterFirst
       containers:
       - name: nginx
@@ -26,7 +26,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-     name: nginx-domain
+  name: nginx-domain
 spec:
   selector:
     app: nginx                            # Deployment 이름인 nginx와 연동
