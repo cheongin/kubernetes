@@ -106,20 +106,20 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: water
+  name: application
   namespace: default
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: water
+      app: application
   template:
     metadata:
       labels:
-        app: water
+        app: application
     spec:
       containers:
-      - name: water
+      - name: application
         image: nginxdemos/nginx-hello:plain-text
         ports:
         - containerPort: 8080
@@ -127,7 +127,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: water-svc
+  name: application-svc
   namespace: default
 spec:
   ports:
@@ -136,4 +136,4 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: water
+    app: application
