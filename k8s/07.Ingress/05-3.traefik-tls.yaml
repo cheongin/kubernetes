@@ -1,0 +1,33 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: operation-ingressroutetls
+  namespace: default
+spec:
+  entryPoints:
+  - websecure
+  routes:
+  - match: Host(`www.myweb.com`) && PathPrefix(`/operation`)
+    kind: Rule
+    services:
+    - name: operation-svc
+      port: 80
+  tls:
+    secretName: myweb-tls
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: application-ingressroutetls
+  namespace: default
+spec:
+  entryPoints:
+  - websecure
+  routes:
+  - match: Host(`www.myweb.com`) && PathPrefix(`/application`)
+    kind: Rule
+    services:
+    - name: application-svc
+      port: 80
+  tls:
+    secretName: myweb-tls
