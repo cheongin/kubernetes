@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: development
-  namespace: default
+  namespace: traefik-service
 spec:
   replicas: 2
   selector:
@@ -23,7 +23,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: development-svc
-  namespace: default
+  namespace: traefik-service
 spec:
   ports:
   - port: 80
@@ -37,7 +37,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: staging
-  namespace: default
+  namespace: traefik-service
 spec:
   replicas: 3
   selector:
@@ -58,7 +58,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: staging-svc
-  namespace: default
+  namespace: traefik-service
 spec:
   ports:
   - port: 80
@@ -72,7 +72,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: operation
-  namespace: default
+  namespace: traefik-service
 spec:
   replicas: 3
   selector:
@@ -93,7 +93,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: operation-svc
-  namespace: default
+  namespace: traefik-service
 spec:
   ports:
   - port: 80
@@ -107,7 +107,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: application
-  namespace: default
+  namespace: traefik-service
 spec:
   replicas: 2
   selector:
@@ -128,7 +128,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: application-svc
-  namespace: default
+  namespace: traefik-service
 spec:
   ports:
   - port: 80

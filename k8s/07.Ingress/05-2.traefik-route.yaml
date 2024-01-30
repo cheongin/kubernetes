@@ -2,7 +2,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: development-ingressroute
-  namespace: default
+  namespace: traefik-service
 spec:
   entryPoints:
   - web
@@ -17,7 +17,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: staging-ingressroutetls
-  namespace: default
+  namespace: traefik-service
 spec:
   entryPoints:
   - websecure
@@ -34,7 +34,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: operation-ingressroutetls
-  namespace: default
+  namespace: traefik-service
 spec:
   entryPoints:
   - websecure
@@ -51,7 +51,7 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: application-ingressroutetls
-  namespace: default
+  namespace: traefik-service
 spec:
   entryPoints:
   - websecure
