@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 07-2.label-dep # yaml 파일명과 일치시키도록 작업
+  name: 07-2.Label-dep # yaml 파일명과 일치시키도록 작업
   labels:
     app: nginx
   namespace: nginx-label # 실습 편의를 위해 NS 구분
