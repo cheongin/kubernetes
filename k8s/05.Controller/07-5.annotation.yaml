@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: annotation
+  labels:
+    app: nginx
+  namespace: nginx-label # 실습 편의를 위해 NS 구분
+annotations:
+  manager: "Administrator"
+  contact: "010-1234-5678"
+  release-version: "v1.0"
+spec:
+  replicas: 1 # 동시에 실행할 POD 수량
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels: # 해당 POD의 구분자 설정
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80 # POD가 실행할 서비스 포트 번호
