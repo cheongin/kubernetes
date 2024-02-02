@@ -14,7 +14,7 @@ spec:
     metadata:
       labels: # 해당 POD의 구분자 설정
         app: nginx
-        enviroment: develop
+        environment: develop
         release: beta
     spec:
       containers:
