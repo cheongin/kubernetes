@@ -1,3 +1,4 @@
+# hostPath Type
 apiVersion: v1
 kind: Pod
 metadata:
@@ -14,3 +15,28 @@ spec:
     hostPath: # hostPath의 세부 설정
       path: /tmp # 호스트의 디렉토리 위치
       type: Directory # 선택 사항
+# hostPath FileOrCreate
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-fileorcreate
+spec:
+  containers:
+  - name: test-fileorcreate
+    image: registry.k8s.io/test-webserver
+    volumeMounts:
+    - mountPath: /var/local/aaa
+      name: mydir
+    - mountPath: /var/local/aaa/1.txt
+      name: myfile
+  volumes:
+  - name: mydir
+    hostPath:
+      # 파일 디렉터리가 생성되었는지 확인한다.
+      path: /var/local/aaa
+      type: DirectoryOrCreate
+  - name: myfile
+    hostPath:
+      path: /var/local/aaa/1.txt
+      type: FileOrCreate
