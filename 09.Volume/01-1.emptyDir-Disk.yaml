@@ -4,18 +4,11 @@ metadata:
   name: test-container-disk
 spec:
   containers:
-  # 1번 Container
   - image: registry.k8s.io/test-webserver
-    name: test-container-disk1
+    name: test-container-disk
     volumeMounts: # Container 내부 Volume 선언
-    - mountPath: /cache1 # Mount 경로
-      name: cache-volume1 # Container 내부에서 사용할 Volume 이름
-  - image: registry.k8s.io/test-webserver
-    # 2번 Container
-    name: test-container-disk2
-    volumeMounts: # Container 내부 Volume 선언
-    - mountPath: /cache2 # Mount 경로
-      name: cache-volume2 # Container 내부에서 사용할 Volume 이름
+    - mountPath: /cache # Mount 경로
+      name: cache-volume # Container 내부에서 사용할 Volume 이름
   volumes: # Volume 설정
   - name: cache-volume # Volume 이름
     emptyDir: # emptyDir: {} ☞ emptyDir의 용량을 지정하지 않을 때(sizeLimit 미 사용)

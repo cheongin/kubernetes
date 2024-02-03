@@ -4,18 +4,11 @@ metadata:
   name: test-container-mem
 spec:
   containers:
-  # 1번 Container
   - image: registry.k8s.io/test-webserver
-    name: test-container-mem1
+    name: test-container-mem
     volumeMounts: # Container 내부 Volume 선언
-    - mountPath: /cache1 # Mount 경로
-      name: cache-volume1 # Container 내부에서 사용할 Volume 이름
-    # 2번 Container
-  - image: registry.k8s.io/test-webserver
-    name: test-container-mem2
-    volumeMounts: # Container 내부 Volume 선언
-    - mountPath: /cache2 # Mount 경로
-      name: cache-volume2 # Container 내부에서 사용할 Volume 이름
+    - mountPath: /cache # Mount 경로
+      name: cache-volume # Container 내부에서 사용할 Volume 이름
   volumes: # Volume 설정
   - name: cache-volume # Volume 이름
     emptyDir: # emptyDir의 세부 설정
