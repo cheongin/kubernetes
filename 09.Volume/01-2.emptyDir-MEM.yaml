@@ -21,4 +21,3 @@ spec:
     emptyDir: # emptyDir의 세부 설정
       sizeLimit: 500Mi # 용량 지정
       medium: Memory # Disk 대신 Memory 사용 (크기를 지정하지 않으면 Host Memory의 50%로 Limit 고정)
-
