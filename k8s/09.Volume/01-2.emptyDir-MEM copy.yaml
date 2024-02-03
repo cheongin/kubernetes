@@ -6,13 +6,13 @@ spec:
   containers:
   # 1번 Container
   - image: registry.k8s.io/test-webserver
-    name: test-container1
+    name: test-container-mem1
     volumeMounts: # Container 내부 Volume 선언
     - mountPath: /cache # Mount 경로
       name: cache-volume # Container 내부에서 사용할 Volume 이름
     # 2번 Container
   - image: registry.k8s.io/test-webserver
-    name: test-container2
+    name: test-container-mem2
     volumeMounts: # Container 내부 Volume 선언
     - mountPath: /cache # Mount 경로
       name: cache-volume # Container 내부에서 사용할 Volume 이름
