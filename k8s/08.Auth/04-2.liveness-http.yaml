@@ -8,14 +8,14 @@ spec:
   containers:
   - name: liveness
     image: registry.k8s.io/liveness
-    args:
+    args: # /server 마운트
     - /server
     livenessProbe:
-      httpGet:
+      httpGet: # 서비스 경로 지정
         path: /healthz
         port: 8080
         httpHeaders:
         - name: Custom-Header
           value: Awesome
-      initialDelaySeconds: 3
-      periodSeconds: 3
+      initialDelaySeconds: 3 # 첫 번째 Probe 수행 전 3초간 대기
+      periodSeconds: 3 # initialDelaySeconds 시간이 지나면 3초마다 Probe를 수행하고 명령이 성공하면 '0'으로 값을 반환
