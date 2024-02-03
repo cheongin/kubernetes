@@ -5,12 +5,12 @@ metadata:
 spec:
   containers:
   - image: registry.k8s.io/test-webserver
-    name: test-container
+    name: test-hostpath
     volumeMounts: # Container 내부 Volume 선언
     - mountPath: /test-pd # Mount 경로
-      name: test-volume # Container 내부에서 사용할 Volume 이름
+      name: test-hostpath-volume # Container 내부에서 사용할 Volume 이름
   volumes: # Volume 설정
-  - name: test-volume # Volume 이름
+  - name: test-hostpath-volume # Volume 이름
     hostPath: # hostPath의 세부 설정
       path: /tmp # 호스트의 디렉토리 위치
       type: Directory # 선택 사항
