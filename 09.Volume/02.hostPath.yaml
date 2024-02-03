@@ -12,5 +12,5 @@ spec:
   volumes: # Volume 설정
   - name: test-volume # Volume 이름
     hostPath: # hostPath의 세부 설정
-      path: /data # 호스트의 디렉토리 위치
+      path: /etc # 호스트의 디렉토리 위치
       type: Directory # 선택 사항
