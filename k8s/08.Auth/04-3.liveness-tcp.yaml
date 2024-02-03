@@ -18,5 +18,5 @@ spec:
     livenessProbe:
       tcpSocket:
         port: 8080
-      initialDelaySeconds: 15
-      periodSeconds: 10
+      initialDelaySeconds: 15 # 첫 번째 Probe 수행 전 15초간 대기
+      periodSeconds: 10 # initialDelaySeconds 시간이 지나면 10초마다 Probe를 수행하고 명령이 성공하면 '0'으로 값을 반환
